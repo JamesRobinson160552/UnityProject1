@@ -12,13 +12,14 @@ public class PlayerController : MonoBehaviour
     private float ceiling = 18.0f;
     private float shootCooldownFrames = 300;
     public float framesSinceShot = 120;
+    public bool isAlive = true;
     public GameObject projectilePrefab;
     public GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        isAlive = true;
     }
 
     // Update is called once per frame
@@ -40,6 +41,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Obstacle") || other.CompareTag("EnemyProjectile"))
         {
+            isAlive = false;
             Destroy(gameObject);
             gameManager.GameOver();
         }

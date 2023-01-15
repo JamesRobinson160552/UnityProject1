@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     private float minHeight = 6.0f;
     private float maxHeight = 16.0f;
     private float spawnRate = 1.4f;
-    private bool gameActive = false;
+    public bool gameActive = false;
 
     // Start is called before the first frame update
     void Start()
@@ -50,19 +50,19 @@ public class GameManager : MonoBehaviour
         while(gameActive)
         {
             yield return new WaitForSeconds(spawnRate);
-            int enemyChoice = Random.Range(1, 7);
-            if (enemyChoice <= 3)
+            int enemyChoice = Random.Range(1, 13);
+            if (enemyChoice <= 7)
             {
                 float spawnHeight = Random.Range(minHeight, maxHeight);
                 Vector3 spawnPosition = new Vector3(20.0f, spawnHeight, -9.0f);
                 Instantiate(enemies[0], spawnPosition, enemies[0].transform.rotation);
             }
-            else if (enemyChoice <=5)
+            else if (enemyChoice <=11)
             {
-                Vector3 spawnPosition = new Vector3(20.0f, 5.0f, -9.0f);
+                Vector3 spawnPosition = new Vector3(20.0f, 7.0f, -9.0f);
                 Instantiate(enemies[1], spawnPosition, enemies[1].transform.rotation);
             }
-            else if (enemyChoice == 6)
+            else if (enemyChoice == 12)
             {
                 if (GameObject.Find("EnemyDrone") != null)
                 //Only allow one drone at a time

@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class DroneShotScript : MonoBehaviour
 {
+
+    public float speed = -0.02f;
+    public int leftBound = -20;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +17,10 @@ public class DroneShotScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        gameObject.transform.position += new Vector3(speed, 0.0f, 0.0f);
+        if (gameObject.transform.position.x < leftBound)
+        {
+            Destroy(gameObject);
+        }
     }
 }

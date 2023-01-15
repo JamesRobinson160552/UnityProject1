@@ -11,7 +11,8 @@ public class CannonScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("shoot", 2.0f, shootRate);
+        float firstShotTime = Random.Range(0.0f, 2.0f);
+        InvokeRepeating("shoot", firstShotTime, shootRate);
     }
 
     // Update is called once per frame

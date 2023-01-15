@@ -49,6 +49,9 @@ public class DroneScript : MonoBehaviour
 
     void shoot()
     {
-        Instantiate(droneShot, gameObject.transform.position, droneShot.transform.rotation);
+        if (player.GetComponent<PlayerController>().isAlive)
+        {
+            Instantiate(droneShot, gameObject.transform.position, droneShot.transform.rotation);
+        }
     }
 }
