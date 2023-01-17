@@ -12,16 +12,19 @@ public class GameManager : MonoBehaviour
     public Button restartButton;
     public GameObject titleScreen;
     public GameObject[] enemies;
+    public GameObject explosionMaker;
     private int score;
     private float minHeight = 6.0f;
     private float maxHeight = 16.0f;
     private float spawnRate = 1.4f;
     public bool gameActive = false;
+    public AudioSource managerAudio;
+    public AudioClip enemyDeathSound;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -32,6 +35,7 @@ public class GameManager : MonoBehaviour
 
     public void updateScore(int scoreToAdd)
     {
+        managerAudio.PlayOneShot(enemyDeathSound, 1.0f); //GameManager plays audio since enemy gameobject has been destroyed
         score += scoreToAdd;
         scoreText.text = "Score: " + score;
     }
@@ -85,6 +89,7 @@ public class GameManager : MonoBehaviour
         gameOverText.gameObject.SetActive(true);
         gameActive = false;
         restartButton.gameObject.SetActive(true);
+        explosionMaker.GetComponent<ExplosionScript>().explode();
     }
 
     public void RestartGame()

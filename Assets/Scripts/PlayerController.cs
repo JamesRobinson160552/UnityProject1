@@ -15,15 +15,13 @@ public class PlayerController : MonoBehaviour
     public bool isAlive = true;
     public GameObject projectilePrefab;
     public GameManager gameManager;
-    public GameObject exploder;
-    public Rigidbody playerRB;
-    public ParticleSystem explosionParticle;
+    public AudioSource playerAudio;
+    public AudioClip shootSound;
 
     // Start is called before the first frame update
     void Start()
     {
         isAlive = true;
-        playerRB = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -50,9 +48,7 @@ public class PlayerController : MonoBehaviour
         {
             isAlive = false;
             gameManager.GameOver();
-            while(gameObject.transform.position.y > 4.5f)
-            playerRB.AddForce(Vector3.down);
-            explosionParticle.Play();
+            Destroy(gameObject);
         }
     }
 
@@ -60,6 +56,7 @@ public class PlayerController : MonoBehaviour
     {
         Instantiate(projectilePrefab, gameObject.transform.position, gameObject.transform.rotation);
         framesSinceShot = 0;
+        playerAudio.PlayOneShot(shootSound, 1.0f);
     }
 
     void rotate()
