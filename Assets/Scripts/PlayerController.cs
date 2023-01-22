@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float horizontalInput;
-    private float rotationSpeed = -0.3f;
-    private float verticalSpeed = 0.03f;
+    private float rotationSpeed = -0.8f;
+    private float verticalSpeed = 0.08f;
     private float verticalMove;
     private float maxRotation = 0.65f;
     private float ceiling = 18.0f;

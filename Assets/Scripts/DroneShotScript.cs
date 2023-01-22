@@ -5,7 +5,7 @@ using UnityEngine;
 public class DroneShotScript : MonoBehaviour
 {
 
-    public float speed = -0.02f;
+    public float speed = -0.08f;
     public int leftBound = -20;
 
     // Start is called before the first frame update
