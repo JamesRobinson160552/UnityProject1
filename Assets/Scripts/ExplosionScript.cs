@@ -6,8 +6,8 @@ public class ExplosionScript : MonoBehaviour
 {
 
     public float horizontalInput;
-    private float rotationSpeed = -0.3f;
-    private float verticalSpeed = 0.03f;
+    private float rotationSpeed = -45.0f;
+    private float verticalSpeed = 15.0f;
     private float verticalMove;
     private float maxRotation = 0.65f;
     private float ceiling = 18.0f;
@@ -29,10 +29,10 @@ public class ExplosionScript : MonoBehaviour
         if (gameManager.GetComponent<GameManager>().gameActive)
         {
             horizontalInput = Input.GetAxis("Horizontal");
-            gameObject.transform.Rotate(0.0f, 0.0f, horizontalInput * rotationSpeed);
+            gameObject.transform.Rotate(0.0f, 0.0f, horizontalInput * rotationSpeed * Time.deltaTime);
             //Move vertically
             verticalMove = Mathf.Sin(transform.eulerAngles.z * 2 * Mathf.PI / 360) * verticalSpeed;
-            gameObject.transform.position += new Vector3(0.0f, verticalMove, 0.0f);
+            gameObject.transform.position += new Vector3(0.0f, verticalMove, 0.0f) * Time.deltaTime;
 
             //Dont exceed ceiling limit
             if (gameObject.transform.position.y >= ceiling)

@@ -17,7 +17,7 @@ public class ShootUp : MonoBehaviour
     void Update()
     {
         //Move up, destroy if higher than 20
-        gameObject.transform.position += new Vector3(0.0f, speed, 0.0f);
+        gameObject.transform.position += new Vector3(0.0f, speed, 0.0f) * Time.deltaTime;
         if (gameObject.transform.position.y > 20)
         {
             Destroy(gameObject);

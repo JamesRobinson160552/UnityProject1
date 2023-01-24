@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     private int score;
     private float minHeight = 6.0f;
     private float maxHeight = 16.0f;
-    private float spawnRate = 1.6f;
+    public float spawnRate = 1.2f;
     public bool gameActive = false;
     public AudioSource managerAudio;
     public AudioClip enemyDeathSound;
@@ -30,7 +30,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (gameActive)
+        {
+            spawnRate -= Time.deltaTime / 600;
+        }
     }
 
     public void updateScore(int scoreToAdd)

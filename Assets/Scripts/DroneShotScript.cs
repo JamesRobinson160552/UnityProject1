@@ -17,7 +17,7 @@ public class DroneShotScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.position += new Vector3(speed, 0.0f, 0.0f);
+        gameObject.transform.position += new Vector3(speed, 0.0f, 0.0f) * Time.deltaTime;
         if (gameObject.transform.position.x < leftBound)
         {
             Destroy(gameObject);

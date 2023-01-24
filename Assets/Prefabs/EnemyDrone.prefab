@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   droneShot: {fileID: 4323712925633722763, guid: ed7ac157a1fbe4846be3557c71a04ce0, type: 3}
-  speed: 0.01
+  speed: 10
   pointValue: 5
 --- !u!54 &6116676123226864465
 Rigidbody:

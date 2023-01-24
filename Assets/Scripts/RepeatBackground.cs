@@ -22,7 +22,7 @@ public class RepeatBackground : MonoBehaviour
     {
         if (player.GetComponent<PlayerController>().isAlive)
         {
-            transform.position += new Vector3(speed, 0.0f, 0.0f);
+            transform.position += new Vector3(speed, 0.0f, 0.0f) * Time.deltaTime;
             if (transform.position.x < startPosition.x - repeatWidth)
             {
                 transform.position = startPosition;

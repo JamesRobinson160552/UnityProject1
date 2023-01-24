@@ -25,15 +25,15 @@ public class DroneScript : MonoBehaviour
     {
         if (gameObject.transform.position.x > 16)
         {
-            gameObject.transform.position += new Vector3(-speed, 0.0f, 0.0f);
+            gameObject.transform.position += new Vector3(-speed, 0.0f, 0.0f) * Time.deltaTime;
         }
         if (player.transform.position.y > gameObject.transform.position.y)
         {
-            gameObject.transform.position += new Vector3(0.0f, speed, 0.0f);
+            gameObject.transform.position += new Vector3(0.0f, speed, 0.0f) * Time.deltaTime;
         }
         else if (player.transform.position.y < gameObject.transform.position.y)
         {
-            gameObject.transform.position += new Vector3(0.0f, -speed, 0.0f);
+            gameObject.transform.position += new Vector3(0.0f, -speed, 0.0f) * Time.deltaTime;
         }
     }
 

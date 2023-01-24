@@ -19,7 +19,7 @@ public class MoveProjectile : MonoBehaviour
     {
         verticalMove = Mathf.Sin(transform.eulerAngles.z * 2 * Mathf.PI / 360) * speed;
         horizontalMove = Mathf.Cos(transform.eulerAngles.z *2 * Mathf.PI / 360) * speed;
-        gameObject.transform.position += new Vector3(horizontalMove, verticalMove, 0.0f);
+        gameObject.transform.position += new Vector3(horizontalMove, verticalMove, 0.0f) * Time.deltaTime;
         if (gameObject.transform.position.x > 20)
         {
             Destroy(gameObject);

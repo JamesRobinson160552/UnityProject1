@@ -13,6 +13,6 @@ public class MoveHeliRotor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.Rotate(0.0f, 20.0f, 0.0f);
+        gameObject.transform.Rotate(0.0f, 1080.0f * Time.deltaTime, 0.0f);
     }
 }
