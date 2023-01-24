@@ -5,12 +5,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float horizontalInput;
-    private float rotationSpeed = -0.8f;
-    private float verticalSpeed = 0.08f;
+    private float rotationSpeed = -0.9f;
+    private float verticalSpeed = 0.12f;
     private float verticalMove;
     private float maxRotation = 0.65f;
     private float ceiling = 18.0f;
-    private float shootCooldownFrames = 300;
+    private float shootCooldownFrames = 360;
     public float framesSinceShot = 120;
     public bool isAlive = true;
     public GameObject projectilePrefab;

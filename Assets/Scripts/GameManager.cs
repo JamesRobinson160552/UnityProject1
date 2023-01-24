@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     private int score;
     private float minHeight = 6.0f;
     private float maxHeight = 16.0f;
-    private float spawnRate = 1.4f;
+    private float spawnRate = 1.6f;
     public bool gameActive = false;
     public AudioSource managerAudio;
     public AudioClip enemyDeathSound;
