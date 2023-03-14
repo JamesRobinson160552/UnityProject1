@@ -21,7 +21,7 @@
             {
                 "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "buildOutputDirList",
-                "value": "{\"m_Value\":\"C:/Users/james/Downloads/test;C:/Users/james/Downloads/Build;;;;;;;;\"}"
+                "value": "{\"m_Value\":\"C:/Users/james/Downloads/Current School/Game Dev/Personal Project;C:/Users/james/Downloads/test;C:/Users/james/Downloads/Build;;;;;;;\"}"
             }
         ]
     }

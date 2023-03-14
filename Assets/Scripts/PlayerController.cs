@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     private float verticalSpeed = 15.0f;
     private float verticalMove;
     private float maxRotation = 0.65f;
-    private float ceiling = 18.0f;
+    private float ceiling = 19.0f;
     private float shootCooldown = 1.6f;
     public float timeSinceShot = 1.0f;
     public bool isAlive = true;

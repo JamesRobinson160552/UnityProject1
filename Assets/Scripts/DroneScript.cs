@@ -21,7 +21,7 @@ public class DroneScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         if (gameObject.transform.position.x > 16)
         {

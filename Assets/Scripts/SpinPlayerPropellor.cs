@@ -13,6 +13,6 @@ public class SpinPlayerPropellor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.Rotate(0.0f, 0.0f, 10.0f * Time.deltaTime);
+        gameObject.transform.Rotate(0.0f, 0.0f, 8000.0f * Time.deltaTime);
     }
 }
